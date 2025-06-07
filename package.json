@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predev": "npm run typegen",
+    "prebuild": "npm run typegen",
+    "typegen": "sanity schema extract --path=./sanity/extract.json && sanity typegen generate"
   },
   "packageManager": "npm@10.5.2",
   "overrides": {
@@ -15,19 +18,26 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.90.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "init": "^0.1.2",
     "lucide-react": "^0.511.0",
     "next": "15.3.2",
     "next-auth": "^5.0.0-beta.28",
+    "next-sanity": "^9.8.58-canary.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sanity": "^3.90.0",
+    "sanity-plugin-markdown": "^5.1.0",
+    "server-only": "^0.0.1",
+    "styled-components": "^6.1.18",
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/postcss": "^4.1.8",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@types/react": "^19",
