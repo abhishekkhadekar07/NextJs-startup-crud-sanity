@@ -1,7 +1,8 @@
 @import "tailwindcss";
+
+/* @custom-variant dark (&:is(.dark *)); */
 /* @import "@tailwindcss/typography"; */
 /* @import "tailwindcss-animate"; */
-
 
 @theme {
   --screen-xs: 475px;
@@ -10,7 +11,7 @@
   --color-secondary: #FBE843;
   --color-black-100: #333333;
   --color-black-200: #141413;
-  --color-black-300: red;
+  --color-black-300: black;
   --color-black: #000000;
   --color-white-100: #F7F7F7;
   --color-white: #FFFFFF;
@@ -129,6 +130,63 @@
 
   .startup-card_skeleton {
     @apply w-full h-96 rounded-[22px] bg-zinc-400;
+  }
+
+  /* .tag {
+    @apply bg-secondary px-6 py-3 rounded-sm uppercase relative tag-tri;
+  } */
+  .section_container {
+    @apply px-6 py-10 max-w-7xl mx-auto;
+  }
+
+  .divider {
+    @apply border-dotted bg-zinc-400 max-w-4xl my-10 mx-auto;
+  }
+
+  .view-container {
+    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3;
+  }
+
+  .pattern {
+    background-image: linear-gradient(to right,
+        transparent 49.5%,
+        rgba(251, 232, 67, 0.2) 49.5%,
+        rgba(251, 232, 67, 0.6) 50.5%,
+        transparent 50.5%);
+    /* background-color: #EE2B69; */
+    background-size: 5% 100%;
+    background-position: center;
+    background-repeat: repeat-x;
+  }
+
+
+  /* startupform */
+  .startup-form {
+    @apply max-w-2xl mx-auto bg-white my-10 space-y-8 px-6;
+  }
+
+  .startup-form_label {
+    @apply font-bold text-[18px] text-black uppercase;
+  }
+
+  .startup-form_input {
+    @apply border-[3px] border-black px-5 py-7 text-[18px] text-black font-semibold rounded-full mt-3 placeholder:text-black-300;
+  }
+
+  .startup-form_textarea {
+    @apply border-[3px] border-black p-5 text-[18px] text-black font-semibold rounded-[20px] mt-3 placeholder:text-black-300;
+  }
+
+  .startup-form_error {
+    @apply text-red-500 mt-2 ml-5;
+  }
+
+  .startup-form_editor {
+    @apply mt-3 border-[3px] border-black text-[18px] text-black font-semibold placeholder:text-black-300;
+  }
+
+  .startup-form_btn {
+    @apply bg-primary border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px];
   }
 
 }

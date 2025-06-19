@@ -1,9 +1,9 @@
 
 import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
 import SearchForm from "../../components/SearchForm";
-import { client } from "@/sanity/lib/client";
 import { STARTUPS_QUERY } from "@/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
+
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }> }) {
   const query = (await searchParams)?.query;
@@ -13,7 +13,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
 
   return (
     <>
-      <section className="pink_container">
+      <section className="pink_container pattern">
         <h1 className="heading">
           Pitch Your Startup, <br />
           Connect With Entrepreneurs
@@ -39,6 +39,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
           )}
 
         </ul>
+
       </section>
       <SanityLive />
     </>
