@@ -1,1 +1,1 @@
-# StartupProject
+# NextJs-startup-crud-sanity
