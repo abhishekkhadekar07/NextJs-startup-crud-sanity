@@ -6,12 +6,14 @@ import { Button } from './ui/button'
 import { Send } from 'lucide-react';
 import { formSchema } from '@/lib/validations'
 import { z } from 'zod';
+import { createPitch } from '@/lib/actions'
+import { useRouter } from 'next/navigation'
 
 const StartupForm = () => {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [pitch, setPitch] = useState("***hello world***");
-
-    const handleFormSubmit = async (prevState, formData: FormData) => {
+    const router = useRouter();
+    const handleFormSubmit = async (prevState: unknown, formData: FormData) => {
         try {
             const formValues = {
                 title: formData.get("title") as string,
@@ -20,9 +22,18 @@ const StartupForm = () => {
                 link: formData.get("link") as string,
                 pitch,
             }
+
             await formSchema.parseAsync(formValues);
             console.log('formvalue', formValues);
+            const result = await createPitch(prevState, formData, pitch);
+            console.log('result', result);
+            if (result == 'SUCCESS') {
+                router.push(`/startup/${result._id}`);
+                console.log('sucess lol');
 
+            }
+            // createPitch(prevState, formValues, pitch)
+            return result;
         }
         catch (error) {
             if (error instanceof z.ZodError) {

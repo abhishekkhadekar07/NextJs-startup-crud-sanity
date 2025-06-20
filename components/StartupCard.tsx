@@ -5,6 +5,8 @@ import Link from 'next/link';
 import React from 'react'
 import { Button } from './ui/button';
 import { Author, Startup } from '@/sanity/types';
+import { cn } from '@/lib/utils';
+import { Skeleton } from './ui/skeleton';
 export type StartupTypeCard = Omit<Startup, 'author'> & { author?: Author }
 
 const StartupCard = ({ post }: { post: StartupTypeCard }) => {
@@ -35,7 +37,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
 
                 </div>
                 <Link href={`/user/${author?._id}`}>
-                    <Image src={image} alt='Startup Image' width={48} height={48} className='rounded-full' />
+                    <Image src={author?.image} alt='Startup Image' width={48} height={48} className='rounded-full' />
                 </Link>
 
             </div>
@@ -58,5 +60,13 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
         </li>
     )
 }
-
+export const StartupsCardSkeleton = () => {
+    <>
+        {[0, 1, 2, 3, 4].map((index: number) => (
+            <li key={cn("skeleton", index)}>
+                <Skeleton className='startup-card_skeleton' />
+            </li>
+        ))}
+    </>
+}
 export default StartupCard

@@ -11,8 +11,8 @@ const SearchFormReset = () => {
             form.reset();
         }
     }
-    return (
 
+    return (
         <>
             <Button type='reset' onClick={reset} className='size-[50px] 
             bg-black rounded-full flex justify-center items-center text-white '>
