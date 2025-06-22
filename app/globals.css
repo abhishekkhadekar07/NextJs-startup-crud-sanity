@@ -16,7 +16,6 @@
   --color-white-100: #F7F7F7;
   --color-white: #FFFFFF;
   --font-family-work-sans: cursive;
-  ;
   --radius: 0.5rem;
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);

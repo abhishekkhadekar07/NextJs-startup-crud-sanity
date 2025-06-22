@@ -6,7 +6,6 @@ import { BadgePlus, LogOut } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 const Navbar = async () => {
     const session = await auth();
-
     return (
         <header className='px-5 py-3 bg-white shadow-sm font-work-sans text-black'>
             <nav className='flex justify-between items-center'>

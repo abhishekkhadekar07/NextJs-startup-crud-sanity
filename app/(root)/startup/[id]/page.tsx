@@ -8,8 +8,18 @@ import React, { Suspense } from 'react'
 import markdownit from 'markdown-it';
 import { Skeleton } from '@/components/ui/skeleton';
 import View from '@/components/View';
-
-
+// use if your startup title tobe shown so to have better search engine optimization
+// import { Metadata } from 'next';
+// type Props = {
+//     params: Promise<{ id: string }>;
+// }
+// export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+//     const id = (await params).id;
+//     const post = await client.fetch(STARTUP_BY_ID_QUERY, { id })
+//     return {
+//         title: `${post?.title}`
+//     }
+// }
 export const experimental_ppr = true;
 const md = markdownit();
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
