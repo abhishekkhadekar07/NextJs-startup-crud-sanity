@@ -19,7 +19,7 @@
 
 # production
 /build
-
+/credentials
 # misc
 .DS_Store
 *.pem
